@@ -1,0 +1,40 @@
+@import './variables';
+
+.navigation {
+  display: inline-block;
+  border-radius: 2.5rem;
+}
+
+.btn {
+  color: $brand-black;
+  border: none;
+  background: transparent;
+  padding: .8rem;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: $brand-white;
+    background-color: $brand-primary;
+    outline: none;
+  }
+
+  &.active {
+    &:hover,
+    &:focus {
+      background: color($brand-primary blackness(10%));
+      outline: none;
+    }
+  }
+
+  &.disabled {
+    color: $brand-darker-grey;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      color: $brand-darker-grey;
+      background: transparent;
+    }
+  }
+}

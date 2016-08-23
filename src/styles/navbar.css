@@ -1,0 +1,73 @@
+@import './variables';
+
+.navbar {
+  display: flex;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.left {
+  flex-grow: 1;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.right {
+  flex-grow: 1;
+  justify-content: flex-end;
+  text-align: end;
+}
+
+.item {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  color: $brand-black;
+  line-height: 1;
+}
+
+.link {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  color: $brand-black;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $brand-white;
+    text-decoration: none;
+    background: $brand-primary;
+    outline: none;
+  }
+
+  &.active {
+    &:hover,
+    &:focus {
+      background: color($brand-primary blackness(10%));
+      outline: none;
+    }
+  }
+}
+
+.static {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  color: $brand-black;
+  line-height: 1;
+  margin: 0;
+}
+
+.brand {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  padding-left: 0;
+  margin-right: 1rem;
+  color: $brand-black;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}

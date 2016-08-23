@@ -1,0 +1,22 @@
+@mixin btn-variant($color) {
+  &,
+  &[disabled]:hover {
+    background-color: $color;
+    border-color: $color;
+    color: $brand-white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: color($color blackness(10%));
+    border-color: color($color blackness(10%));
+    color: $brand-white;
+  }
+}
+
+@mixin btn-size($padding, $fontSize) {
+  padding: $padding;
+  font-size: $fontSize;
+}

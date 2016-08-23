@@ -1,0 +1,73 @@
+{
+  "name": "@react-ui/atoms-css-modules",
+  "version": "1.0.0-beta0",
+  "description": "Atomic components for React UI styled with CSS Modules",
+  "keywords": [
+    "react",
+    "ui",
+    "react-ui",
+    "components"
+  ],
+  "homepage": "https://github.com/jqestate/react-ui-atoms-css-modules#readme",
+  "bugs": {
+    "url": "https://github.com/jqestate/react-ui-atoms-css-modules/issues"
+  },
+  "license": "Apache-2.0",
+  "author": "Evgeny Rodionov <github@theaqua.im> (https://github.com/theaqua)",
+  "contributors": [
+    "Konstantin Grushetsky <toxickg@icloud.com> (https://github.com/toxickg)",
+    "Evgeniya Molodetskaya <march213@yahoo.com> (https://github.com/march213)"
+  ],
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jqestate/react-ui-atoms-css-modules.git"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build:css": "NODE_ENV=production $(npm bin)/postcss -c postcss.config.json -d lib/styles src/styles/*.css",
+    "build:js": "NODE_ENV=production $(npm bin)/babel src --out-dir lib",
+    "build": "npm run build:css && npm run build:js",
+    "lint": "eslint --ext .jsx --ext .js src",
+    "check": "npm run lint",
+    "precommit": "npm run check",
+    "prepublish": "npm run clean && npm run check && npm run build"
+  },
+  "devDependencies": {
+    "@dtrussia/eslint-config-dtrussia": "2.2.1",
+    "autoprefixer": "^6.1.2",
+    "babel-cli": "6.4.0",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "6.3.13",
+    "babel-preset-react": "6.3.13",
+    "babel-preset-stage-0": "6.3.13",
+    "eslint": "^2.10.2",
+    "eslint-plugin-react": "^5.1.1",
+    "husky": "0.10.2",
+    "postcss-cli": "^2.3.2",
+    "postcss-color-function": "^2.0.0",
+    "postcss-conditionals": "^2.0.0",
+    "postcss-for": "^2.0.1",
+    "postcss-import": "^7.1.3",
+    "postcss-loader": "^0.8.0",
+    "postcss-mathjs": "^1.0.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-sassy-mixins": "^1.0.0",
+    "postcss-simple-vars": "^1.1.0",
+    "rimraf": "2.5.4"
+  },
+  "dependencies": {
+    "classnames": "2.2.5",
+    "react": "^0.14.6",
+    "react-auto-form": "^1.2.4",
+    "react-maskedinput": "3.0.0",
+    "react-router": "2.4.0"
+  },
+  "peerDependecies": {
+    "@react-ui/core": "1.0.0-beta2"
+  }
+}
