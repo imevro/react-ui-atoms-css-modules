@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-export default class Page extends Component {
+class Page extends Component {
   render() {
     const { isHidden, isDisabled, isActive, onClick, children, key, styles } = this.props;
 
@@ -19,3 +19,5 @@ export default class Page extends Component {
    );
   }
 }
+
+export default Page;

@@ -7,4 +7,13 @@ import Select from './select';
 import Static from './static';
 import Helper from './helper';
 
-export default { Container, Group, Input, Label, Textarea, Select, Static, Helper };
+export default {
+  Container,
+  Group,
+  Input,
+  Label,
+  Textarea,
+  Select,
+  Static,
+  Helper,
+};

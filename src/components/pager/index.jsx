@@ -1,35 +1,15 @@
 /**
- * # Stateless Pager component
- *
- * ## Usage
- * ```
- * <Pager current={3}
- *    total={20}
- *    visiblePages={5}
- *    onPageChanged={this.handlePageChanged}
- *    titles={{
- *      first:   "First",
- *      prev:  "Prev",
- *      prevSet: "<<<",
- *      nextSet: ">>>",
- *      next:  "Next",
- *      last:  "Last"
- *    }} />
- * ```
- *
  * ## How it looks like
+ *
  * ```
  * First | Prev | ... | 6 | 7 | 8 | 9 | ... | Next | Last
  * ```
- *
  */
 
 import React, { Component } from 'react';
+
 import Page from './page';
 
-/**
- * ## Constants
- */
 const BASE_SHIFT = 0;
 const TITLE_SHIFT = 1;
 const TITLES = {
@@ -92,7 +72,6 @@ export default (styles = {}) => {
 
       if (handler) handler(el);
     }
-
 
     calcBlocks() {
       const { total, visiblePages } = this.props;

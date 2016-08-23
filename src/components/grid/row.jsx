@@ -1,13 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 
+const generateClassname = (props, styles, size) => cn(props[size].split(` `).map(cl => styles[`${size}-${cl}`]));
+
 export default (styles = {}) => props => {
-  const generate = size => cn(props[size].split(` `).map(cl => styles[`${size}-${cl}`]));
   const className = [
-    props.xs && generate(`xs`),
-    props.sm && generate(`sm`),
-    props.md && generate(`md`),
-    props.lg && generate(`lg`),
+    props.xs && generateClassname(props, styles, `xs`),
+    props.sm && generateClassname(props, styles, `sm`),
+    props.md && generateClassname(props, styles, `md`),
+    props.lg && generateClassname(props, styles, `lg`),
   ];
 
   return (

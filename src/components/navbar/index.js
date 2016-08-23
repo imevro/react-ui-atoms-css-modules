@@ -4,4 +4,10 @@ import Link from './link';
 import Static from './static';
 import Brand from './brand';
 
-export default { Container, Menu, Link, Static, Brand };
+export default {
+  Container,
+  Menu,
+  Link,
+  Static,
+  Brand,
+};

@@ -2,18 +2,18 @@ import React from 'react';
 import cn from 'classnames';
 
 export default (styles = {}) => props => {
-  const responsive = {
+  const responsiveClassName = {
     [styles.responsive]: !!props.responsive,
   };
 
-  const className = {
+  const tableClassName = {
     [styles.bordered]: !!props.bordered,
   };
 
   if (props.responsive) {
     return (
-      <div className={cn(responsive)}>
-        <table {...props} className={cn(styles.table, className, props.className)}>
+      <div className={cn(responsiveClassName)}>
+        <table {...props} className={cn(styles.table, tableClassName, props.className)}>
           <tbody>
             {props.children}
           </tbody>
@@ -22,7 +22,7 @@ export default (styles = {}) => props => {
     );
   } else {
     return (
-      <table {...props} className={cn(styles.table, className, props.className)}>
+      <table {...props} className={cn(styles.table, tableClassName, props.className)}>
         <tbody>
           {props.children}
         </tbody>

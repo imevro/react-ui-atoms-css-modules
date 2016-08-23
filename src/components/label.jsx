@@ -5,6 +5,7 @@ export default (styles = {}) => props => {
   const className = {
     [styles[props.kind]]: !!props.kind,
   };
+
   return (
     <span {...props} className={cn(styles.label, className, props.className)}>
       {props.children}
