@@ -33,13 +33,15 @@ export default UI;
 Use atomic components where needed:
 
 ```jsx
+import React, { Component } from 'react';
+
 import UI from 'src/components/ui';
 const {
   Button, Label,
   Grid: { Container, Row, Col },
 } = UI;
 
-class MyUberComponent from Components {
+class MyUberComponent extends Component {
   render() {
     return (
       <Container>

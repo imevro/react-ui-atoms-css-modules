@@ -46,15 +46,18 @@ Please note that _rem_ units are used for styling components.
 
 ```jsx
 <UI.Alert message="Alert title here">
-  simple text here
+  Simple text here
 </UI.Alert>
 
 // or
 
 <UI.Alert>
-  simple text here
+  Simple text here
 </UI.Alert>
 ```
+
+`Alert` props:
+  * `message`
 
 -------------------------------------------------------------------------------
 
@@ -66,14 +69,14 @@ Please note that _rem_ units are used for styling components.
 </UI.Badge>
 ```
 
-Add any of the below mentioned kind modifier to change the appearance of the badge:
-- primary
-- success
-- danger
-- warning
-- success
-- info
-- default
+`Badge` props:
+  * `primary`
+  * `success`
+  * `danger`
+  * `warning`
+  * `success`
+  * `info`
+  * `default`
 
 -------------------------------------------------------------------------------
 
@@ -81,43 +84,42 @@ Add any of the below mentioned kind modifier to change the appearance of the bad
 
 ```jsx
 <UI.Button type="button" kind="primary" size="xs">
-  button
+  Just A Button
 </UI.Button>
 
 // or
 
 <UI.Button to="/link" kind="success" size="md">
-  link
+  Just A Link
 </UI.Button>
 
 // or
 
 <UI.Button block type="button" size="lg" kind="primary">
-  button
+  Just A Button
 </UI.Button>
 ```
 
-Add any of the below mentioned modifier to change the appearance of the button:
-* kind
-  - primary
-  - default
-  - success
-  - danger
-  - warning
-  - success
-  - info
-* size
-  - xs
-  - sm (default size)
-  - md
-  - lg
-* block (to full width of the container)
+`Button` props:
+  * `kind`
+    - `primary`
+    - `default`
+    - `success`
+    - `danger`
+    - `warning`
+    - `success`
+    - `info`
+  * `size`
+    - `xs`
+    - `sm` (default size)
+    - `md`
+    - `lg`
+  * `block` (stretch to the full width of the container)
 
 -------------------------------------------------------------------------------
 
 ### BtnGroup
 
-BtnGroup is simple as possible
 ```jsx
 <UI.BtnGroup>
   <UI.Button type="button" kind="primary">button</UI.Button>
@@ -143,12 +145,12 @@ BtnGroup is simple as possible
 
 ```
 
-Add any of the below mentioned modifier to change the appearance of the image:
-* kind
-  - circle (notice, for perfect circle you need to provide square image)
-  - rounded
-  - bordered
-* responsive (full width of the container)
+`Image` props:
+  * `kind`
+    - `circle` (notice that for the perfect circle you need to provide a square image)
+    - `rounded`
+    - `bordered`
+  * `responsive` (stretch to the full width of the container)
 
 -------------------------------------------------------------------------------
 
@@ -160,24 +162,23 @@ Add any of the below mentioned modifier to change the appearance of the image:
 </UI.Label>
 ```
 
-Add any of the below mentioned kind modifier to change the appearance of the label:
-- primary
-- success
-- danger
-- warning
-- success
-- info
-- default
+`Label` props:
+  * `kind`
+    - `primary`
+    - `success`
+    - `danger`
+    - `warning`
+    - `success`
+    - `info`
+    - `default`
 
 -------------------------------------------------------------------------------
 
 ### Loading
 
-```jsx
-this.state = {
-  loading: false, // use state to set loading
-};
+A simple loading indicator:
 
+```jsx
 <UI.Loading />
 ```
 
@@ -185,48 +186,47 @@ this.state = {
 
 ### Media
 
-Media displays a media object (images or any what you want) to the left or right of a content block.
+Media displays a media object (e.g., an image) to the left or to the right of a content block:
 
 ```jsx
 <UI.Media
   left={<UI.Image src="//" width="64" height="64" />}
-  body={<div>your component here</div>}
+  body={<div>Your component goes here</div>}
 />
 
 // or
 
 <UI.Media
   left={<UI.Image src="//" width="64" height="64" />}
-  body={<div>your component here</div>}
+  body={<div>Your component goes here</div>}
   right={<UI.Image src="//" width="64" height="64" />}
 />
 
 // or
 
 <UI.Media
-  body={<div>your component here</div>}
+  body={<div>Your component goes here</div>}
   right={<UI.Image src="//" width="64" height="64" />}
 />
-
 ```
 
 -------------------------------------------------------------------------------
 
 ### Panel
 
-By default, Panel apply some basic background-color and padding to contain some content.
-This component use media-queries
+By default, `Panel` applies background color and padding in order to hold content.
+This component uses media queries.
 
 ```jsx
 <UI.Panel size="sm">
-  content here
+  Content goes here
 </UI.Panel>
 ```
 
-Add any of the below mentioned size modifier to change the appearance of the panel:
-* size
-  - xs
-  - sm
+`Panel` props:
+  * `size`
+    - `xs`
+    - `sm`
 
 -------------------------------------------------------------------------------
 
@@ -245,44 +245,43 @@ Add any of the below mentioned size modifier to change the appearance of the pan
       3
     </UI.Grid.Col>
   </UI.Grid.Row>
-
   <UI.Grid.Row>
     <UI.Grid.Col xs="6" xsOffset="3">
       1
     </UI.Grid.Col>
   </UI.Grid.Row>
-
-  <UI.Row xs="between">
-    <UI.Col xs="4">
+  <UI.Grid.Row xs="between">
+    <UI.Grid.Col xs="4">
       1
-    </UI.Col>
-    <UI.Col xs="4">
+    </UI.Grid.Col>
+    <UI.Grid.Col xs="4">
       2
-    </UI.Col>
-  </UI.Row>
-  <UI.Row xs="center bottom">
-    <UI.Col xs="4">
+    </UI.Grid.Col>
+  </UI.Grid.Row>
+  <UI.Grid.Row xs="center bottom">
+    <UI.Grid.Col xs="4">
       1
-    </UI.Col>
-    <UI.Col xs="2">
+    </UI.Grid.Col>
+    <UI.Grid.Col xs="2">
       2
-    </UI.Col>
-  </UI.Row>
+    </UI.Grid.Col>
+  </UI.Grid.Row>
 </UI.Grid.Container>
 ```
-Container by default have fixed width, add \<UI.Grid.Container fluid> to be 100% width.
 
-Add any of the below mentioned modifier to change number of the column:
-* xs, sm, md, lg
-  - from 1 to 12
-* xsOffset, smOffset, mdOffset, lgOffset
-  - from 1 to 12
+By default, `Container` has its width fixed. You can use `fluid` prop to stretch it to 100%.
 
-Add any of the below mentioned modifier to row to change alignment of a column:
-* xs, sm, md, lg
-  - top, middle, bottom
-  - start, center, end
-  - around, between
+`Col` props that control the number of columns:
+  * `xs`, `sm`, `md`, `lg`
+    - values from `1` to `12`
+  * `xsOffset`, `smOffset`, `mdOffset`, `lgOffset`
+    - values from `1` to `12`
+
+`Row` props that change the alignment within a column:
+  * `xs`, `sm`, `md`, `lg`
+    - `top`, `middle`, `bottom`
+    - `start`, `center`, `end`
+    - `around`, `between`
 
 -------------------------------------------------------------------------------
 
@@ -292,19 +291,15 @@ Add any of the below mentioned modifier to row to change alignment of a column:
 <UI.Grid.Row>
   <UI.Form.Container>
     <UI.Form.Group horizontal size="sm" kind="success">
-
       <UI.Grid.Col xs="4">
         <UI.Form.Label>Email</UI.Form.Label>
       </UI.Grid.Col>
-
       <UI.Grid.Col xs="4">
         <UI.Form.Input placeholder="Email" />
       </UI.Grid.Col>
-
       <UI.Grid.Col xs="4">
         <UI.Form.Static>Text</UI.Form.Static>
       </UI.Grid.Col>
-
     </UI.Form.Group>
   </UI.Form.Container>
 </UI.Grid.Row>
@@ -352,12 +347,13 @@ Add any of the below mentioned modifier to row to change alignment of a column:
     <UI.Form.Input block kind="warning" placeholder="Email" />
   </UI.Form.Group>
   <UI.Form.Group>
-    <UI.Form.Textarea kind="success" block rows="6" defaultValue="Don't forget to add row attribute" />
+    <UI.Form.Textarea kind="success" block rows="6" />
   </UI.Form.Group>
 </UI.Form.Container>
 
 // or
-// Use this for float Label, but don't forget add required to any Input or Textarea
+
+/* Use this for floating kind of label, but don't forget to add the `required` prop to any `Input` or `Textarea` */
 <UI.Form.Container>
   <UI.Form.Group float>
     <UI.Form.Input type="text" placeholder="Name" required />
@@ -368,35 +364,33 @@ Add any of the below mentioned modifier to row to change alignment of a column:
 
 #### Group
 
-Add any of the below mentioned modifier to change the appearance of the form group:
-* size (modify padding for label, formControl and static)
-  - xs
-  - sm
-  - lg
-* kind
-  - success
-  - error
-  - warning
-* horizontal (notice, that label, static and input modify to display: block)
-* float (for float label)
+`Form.Group` props:
+  * `size` (modifies padding for `Label` or `Static`)
+    - `xs`
+    - `sm`
+    - `lg`
+  * `kind`
+    - `success`
+    - `error`
+    - `warning`
+  * `horizontal` (notice that `Label`, `Static` and `Input` are modified according to `display: block`)
+  * `float` (for floating label)
 
 #### Label
 
-Add block modifier to change the appearance of the label:
-
-* block (modify label to display block and have 100% width of the container)
+`Form.Label` props:
+  * `block` (stretch the label to 100% width of the container)
 
 #### Input
 
-Add any of the below mentioned modifier to change the appearance of the form input:
-* kind (modify border color)
-  - primary (default)
-  - success
-  - danger
-  - warning
-  - info
-* block
-
+`Form.Input` props:
+  * `kind`(modify border color)
+    - `primary` (default)
+    - `success`
+    - `danger`
+    - `warning`
+    - `info`
+  * `block`
 
 #### Select
 
@@ -415,28 +409,28 @@ Add any of the below mentioned modifier to change the appearance of the form inp
 ]} />
 ```
 
-Add any of the below mentioned modifier to change the appearance of the form input:
-* kind (modify border color)
-  - primary (default)
-  - success
-  - danger
-  - warning
-  - info
-* block
-* ranged
-* options
-  - array of a object (each object modify to select option)
+`Form.Select` props:
+  * `kind` (modifies border color)
+    - `primary` (default)
+    - `success`
+    - `danger`
+    - `warning`
+    - `info`
+  * `block`
+  * `ranged`
+  * `options`
+    - array of objects
 
 #### Textarea
 
-Add any of the below mentioned modifier to change the appearance of the form textarea:
-* kind (modify border color)
-  - primary (default)
-  - success
-  - danger
-  - warning
-  - info
-* block
+`Form.Textarea` props:
+  * `kind` (modifies border color)
+    - `primary` (default)
+    - `success`
+    - `danger`
+    - `warning`
+    - `info`
+  * `block`
 
 -------------------------------------------------------------------------------
 
@@ -472,12 +466,12 @@ Add any of the below mentioned modifier to change the appearance of the form tex
 </UI.Navbar.Container>
 ```
 
-Add fixed modifier to change the appearance of the navbar container:
-* fixed
+`Navbar.Container` props:
+  * `fixed`
 
-Add belwo modifier to change the appearance of the navbar menu:
-* left
-* right
+`Navbar.Menu` props:
+  * `left`
+  * `right`
 
 -------------------------------------------------------------------------------
 
@@ -498,18 +492,18 @@ Add belwo modifier to change the appearance of the navbar menu:
    }} />
 ```
 
-Pager explain:
-* current - current page
-* total - current pages (not items)
-* visiblePages - visible pages
-* onPageChanged - action
-* titles
-  - first - first page
-  - prev - previous page
-  - prevSet - previous set of pages
-  - nextSet - next set of pages
-  - next - next page
-  - last - last page
+`Pager` props:
+  * `current` - number of current page
+  * `total` - total number of pages (not items)
+  * `visiblePages` - number of visible pages
+  * `onPageChanged` - action handler
+  * `titles` - captions used on navigation buttons
+    - `first` - first page
+    - `prev` - previous page
+    - `prevSet` - previous set of pages
+    - `nextSet` - next set of pages
+    - `next` - next page
+    - `last` - last page
 
 -------------------------------------------------------------------------------
 
@@ -537,9 +531,9 @@ Pager explain:
 </UI.Table.Container>
 ```
 
-Add below modifier to change the appearance of the table container:
-* responsive (by default it's not)
-* bordered
+`Table.Container` props:
+  * `responsive`
+  * `bordered`
 
-Add bordered modifier to change the appearance of the table head and table cell:
-* bordered
+`Table.Heading` and `Table.Cell` props:
+  * `bordered`
