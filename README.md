@@ -47,6 +47,11 @@ class MyUberComponent extends Component {
       <Container>
         <Row>
           <Col>
+            <Header>Beautiful Header</Header>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <Label>Here I am!</Label>
             <Button kind="primary">Press me</Button>
           </Col>

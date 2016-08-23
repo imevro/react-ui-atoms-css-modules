@@ -1,5 +1,5 @@
 import Container from './form';
-import Group from './form-group';
+import Group from './group';
 import Input from './input';
 import Label from './label';
 import Textarea from './textarea';

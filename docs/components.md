@@ -142,7 +142,6 @@ Please note that _rem_ units are used for styling components.
 // or
 
 <UI.Image src="//" responsive width="128" height="128" />
-
 ```
 
 `Image` props:
@@ -230,7 +229,7 @@ This component uses media queries.
 
 -------------------------------------------------------------------------------
 
-### Grid
+### Grid (12 columns)
 
 ```jsx
 <UI.Grid.Container>
@@ -478,18 +477,18 @@ By default, `Container` has its width fixed. You can use `fluid` prop to stretch
 ### Pager
 ```jsx
 <Pager
-   current={3}
-   total={20}
-   visiblePages={5}
-   onPageChanged={this.handlePageChanged}
-   titles={{
-     first:   "First",
-     prev:  "Prev",
-     prevSet: "<<<",
-     nextSet: ">>>",
-     next:  "Next",
-     last:  "Last"
-   }} />
+  current="3"
+  total="20"
+  visiblePages="5"
+  onPageChanged={this.handlePageChanged}
+  titles={{
+    first: `First`,
+    prev: `Prev`,
+    prevSet: `<<<`,
+    nextSet: `>>>`,
+    next: `Next`,
+    last: `Last`
+  }} />
 ```
 
 `Pager` props:

@@ -24,14 +24,12 @@ export default {
   Image,
   Media,
   Pager,
-
   Table: {
     Container: Table.Container,
     Row: Table.Row,
     Cell: Table.Cell,
     Heading: Table.Heading,
   },
-
   Form: {
     Container: Form.Container,
     Group: Form.Group,
@@ -42,13 +40,11 @@ export default {
     Static: Form.Static,
     Helper: Form.Helper,
   },
-
   Grid: {
     Container: Grid.Container,
     Row: Grid.Row,
     Col: Grid.Col,
   },
-
   Navbar: {
     Container: Navbar.Container,
     Menu: Navbar.Menu,
