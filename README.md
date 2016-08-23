@@ -83,13 +83,12 @@ class MyUberComponent extends Component {
 * [Form](/docs/components.md#form)
   - Container
   - Group
-  - Checkbox
-  - Radio
   - Select
   - Input
   - Label
   - Static
   - Textarea
+  - Helper
 * [Navbar](/docs/components.md#navbar)
   - Container
   - Menu

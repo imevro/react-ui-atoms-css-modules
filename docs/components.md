@@ -21,13 +21,12 @@ Please note that _rem_ units are used for styling components.
 * [Form](/docs/components.md#form)
   - Container
   - Group
-  - Checkbox
-  - Radio
   - Select
   - Input
   - Label
   - Static
   - Textarea
+  - Helper
 * [Navbar](/docs/components.md#navbar)
   - Container
   - Menu
