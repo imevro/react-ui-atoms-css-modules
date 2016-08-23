@@ -2,6 +2,8 @@
 
 Atomic components for React UI styled with CSS Modules
 
+[![build status](https://img.shields.io/travis/jqestate/react-ui-atoms-css-modules/master.svg?style=flat)](https://travis-ci.org/jqestate/react-ui-atoms-css-modules)
+
 
 ## Table Of Contents
 
