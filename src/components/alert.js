@@ -1,11 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => (
-  <div {...props} className={cn(styles.panel, props.className)}>
-    <div className={styles.body}>
-      {props.message && <h3 className={styles.title}>{props.message}</h3>}
-      {props.children}
+const Alert = (styles = {}) => ({ className, message, children, ...rest }) => (
+    <div {...rest} className={cn(styles.panel, className)}>
+      <div className={styles.body}>
+        {message && <h3 className={styles.title}>{message}</h3>}
+        {children}
+      </div>
     </div>
-  </div>
 );
+
+export default Alert;

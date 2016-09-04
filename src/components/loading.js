@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => {
-  return class extends Component {
+const Loading = (styles = {}) => {
+  return class LoadingInner extends Component {
     constructor(props) {
       super(props);
 
@@ -22,12 +22,15 @@ export default (styles = {}) => {
     }
 
     render() {
-      const className = {
+      const { className, ...rest } = this.props;
+
+      const activeClass = {
         [styles.active]: !!this.state.loading,
       };
 
+
       return (
-        <div {...this.props} className={cn(styles.loading, className, this.props.className)}>
+        <div {...rest} className={cn(styles.loading, activeClass, className)}>
           <div className={styles.element}>
             <div className={styles.item}></div>
             <div className={styles.item}></div>
@@ -38,3 +41,5 @@ export default (styles = {}) => {
     }
   };
 };
+
+export default Loading;

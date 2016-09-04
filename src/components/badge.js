@@ -1,14 +1,18 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles[props.kind]]: !!props.kind,
+const Badge = (styles = {}) => props => {
+  const { kind, children, className, ...rest } = props;
+
+  const kindClass = {
+    [styles[kind]]: !!kind,
   };
 
   return (
-    <span {...props} className={cn(styles.badge, className, props.className)}>
-      {props.children}
+    <span {...rest} className={cn(styles.badge, kindClass, className)}>
+      {children}
     </span>
   );
 };
+
+export default Badge;

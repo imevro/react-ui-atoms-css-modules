@@ -2,25 +2,28 @@ import React from 'react';
 import { Link } from 'react-router';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles[props.kind]]: !!props.kind,
-    [styles[props.size]]: !!props.size,
-    [styles.block]: !!props.block,
-    [styles.active]: !!props.active,
+const Button = (styles = {}) => props => {
+  const { className, children, kind, size, block, active, to, ...rest } = props;
+  const anotherClass = {
+    [styles[kind]]: !!kind,
+    [styles[size]]: !!size,
+    [styles.block]: !!block,
+    [styles.active]: !!active,
   };
 
-  if (props.to) {
+  if (to) {
     return (
-      <Link {...props} className={cn(styles.btn, className, props.className)}>
-        {props.children}
+      <Link {...rest} to={to} className={cn(styles.btn, anotherClass, className)}>
+        {children}
       </Link>
     );
   } else {
     return (
-      <button {...props} className={cn(styles.btn, className, props.className)}>
-        {props.children}
+      <button {...rest} className={cn(styles.btn, anotherClass, className)}>
+        {children}
       </button>
     );
   }
 };
+
+export default Button;

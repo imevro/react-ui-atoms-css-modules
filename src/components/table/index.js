@@ -3,9 +3,11 @@ import Row from './row';
 import Cell from './cell';
 import Heading from './heading';
 
-export default {
+const Table = {
   Container,
   Row,
   Cell,
   Heading,
 };
+
+export default Table;

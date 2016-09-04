@@ -1,8 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => (
-  <div {...props} className={cn(styles.btnGroup, props.className)}>
-    {props.children}
+const BtnGroup = (styles = {}) => ({ className, children, ...rest }) => (
+  <div {...rest} className={cn(styles.btnGroup, className)}>
+    {children}
   </div>
 );
+
+export default BtnGroup;

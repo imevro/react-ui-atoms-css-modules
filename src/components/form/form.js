@@ -1,11 +1,15 @@
 import React from 'react';
-import Form from 'react-auto-form';
+import InnForm from 'react-auto-form';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
+const FormContainer = (styles = {}) => ({ className, children, fluid, ...rest }) => {
+  const containerClass = fluid ? styles.containerFluid : styles.container;
+
   return (
-    <Form {...props} className={cn(styles.form, props.className)}>
-      {props.children}
-    </Form>
+    <InnForm {...rest} className={cn(styles.form, containerClass, className)}>
+      {children}
+    </InnForm>
   );
 };
+
+export default FormContainer;

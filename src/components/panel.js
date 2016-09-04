@@ -1,14 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles[props.size]]: !!props.size,
+const Panel = (styles = {}) => ({ className, children, size, ...rest }) => {
+  const anotherClass = {
+    [styles[size]]: !!size,
   };
 
   return (
-    <div {...props} className={cn(styles.panel, className, props.className)}>
-      {props.children}
+    <div {...rest} className={cn(styles.panel, anotherClass, className)}>
+      {children}
     </div>
   );
 };
+
+export default Panel;

@@ -1,18 +1,20 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles[props.size]]: !!props.size,
-    [styles[`form-${props.kind}`]]: !!props.kind,
-    [styles.inline]: !!props.inline,
-    [styles.horizontal]: !!props.horizontal,
-    [styles.float]: !!props.float,
+const Group = (styles = {}) => ({ className, children, size, kind, inline, horizontal, float, ...rest }) => {
+  const anotherClass = {
+    [styles[size]]: !!size,
+    [styles[`form-${kind}`]]: !!kind,
+    [styles.inline]: !!inline,
+    [styles.horizontal]: !!horizontal,
+    [styles.float]: !!float,
   };
 
   return (
-    <div {...props} className={cn(styles.group, className, props.className)}>
-      {props.children}
+    <div {...rest} className={cn(styles.group, anotherClass, className)}>
+      {children}
     </div>
   );
 };
+
+export default Group;

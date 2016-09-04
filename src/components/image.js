@@ -1,13 +1,15 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles[props.kind]]: !!props.kind,
-    [styles.responsive]: !!props.responsive,
+const Image = (styles = {}) => ({ className, kind, responsive, ...rest }) => {
+  const anotherClass = {
+    [styles[kind]]: !!kind,
+    [styles.responsive]: !!responsive,
   };
 
   return (
-    <img {...props} className={cn(styles.img, className, props.className)} />
+    <img {...rest} className={cn(styles.img, anotherClass, className)} />
   );
 };
+
+export default Image;

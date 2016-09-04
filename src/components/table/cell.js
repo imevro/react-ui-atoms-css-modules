@@ -1,14 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles.bordered]: !!props.bordered,
+const Cell = (styles = {}) => ({ className, children, bordered, ...rest }) => {
+  const anotherClass = {
+    [styles.bordered]: !!bordered,
   };
 
   return (
-    <td {...props} className={cn(styles.cell, className, props.className)}>
-      {props.children}
+    <td {...rest} className={cn(styles.cell, anotherClass, className)}>
+      {children}
     </td>
   );
 };
+
+export default Cell;

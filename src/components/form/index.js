@@ -7,7 +7,7 @@ import Select from './select';
 import Static from './static';
 import Helper from './helper';
 
-export default {
+const Form = {
   Container,
   Group,
   Input,
@@ -17,3 +17,5 @@ export default {
   Static,
   Helper,
 };
+
+export default Form;

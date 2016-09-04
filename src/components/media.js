@@ -1,24 +1,24 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  return (
-    <div {...props} className={cn(styles.media, props.className)}>
-      {props.left &&
-        <div className={styles.left}>
-          {props.left}
-        </div>
-      }
-      {props.body &&
-        <div className={styles.body}>
-          {props.body}
-        </div>
-      }
-      {props.right &&
-        <div className={styles.right}>
-          {props.right}
-        </div>
-      }
-    </div>
-  );
-};
+const Media = (styles = {}) => ({ className, body, left, right, ...rest }) => (
+  <div {...rest} className={cn(styles.media, className)}>
+    {left &&
+      <div className={styles.left}>
+        {left}
+      </div>
+    }
+    {body &&
+      <div className={styles.body}>
+        {body}
+      </div>
+    }
+    {right &&
+      <div className={styles.right}>
+        {right}
+      </div>
+    }
+  </div>
+);
+
+export default Media;
