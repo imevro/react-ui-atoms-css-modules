@@ -5,7 +5,6 @@
  * First | Prev | ... | 6 | 7 | 8 | 9 | ... | Next | Last
  * ```
  */
-
 import React, { Component } from 'react';
 
 import Page from './page';
@@ -35,6 +34,22 @@ export default (styles = {}) => {
   return class extends Component {
     constructor(props) {
       super(props);
+
+      this.handlePageChanged = this.handlePageChanged.bind(this);
+      this.handleFirstPage = this.handleFirstPage.bind(this);
+      this.handlePreviousPage = this.handlePreviousPage.bind(this);
+      this.handleNextPage = this.handleNextPage.bind(this);
+      this.handleLastPage = this.handleLastPage.bind(this);
+      this.handleMorePrevPages = this.handleMorePrevPages.bind(this);
+      this.handleMoreNextPages = this.handleMoreNextPages.bind(this);
+      this.calcBlocks = this.calcBlocks.bind(this);
+      this.isPrevDisabled = this.isPrevDisabled.bind(this);
+      this.isNextDisabled = this.isNextDisabled.bind(this);
+      this.isPrevMoreHidden = this.isPrevMoreHidden.bind(this);
+      this.isNextMoreHidden = this.isNextMoreHidden.bind(this);
+      this.visibleRange = this.visibleRange.bind(this);
+      this.getTitles = this.getTitles.bind(this);
+      this.renderPages = this.renderPages.bind(this);
     }
 
     handleFirstPage() {

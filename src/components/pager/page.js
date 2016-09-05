@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 class Page extends Component {
   render() {
-    const { isHidden, isDisabled, isActive, onClick, children, key, styles, className } = this.props;
+    const { isHidden, isDisabled, isActive, onClick, children, styles, className } = this.props;
 
     if (isHidden) return null;
 
@@ -13,7 +13,7 @@ class Page extends Component {
     };
 
     return (
-      <button key={key} className={cn(activeClass, className)} onClick={onClick}>
+      <button className={cn(activeClass, className)} onClick={onClick}>
         {children}
       </button>
    );
