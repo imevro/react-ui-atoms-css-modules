@@ -52,9 +52,9 @@
     "build:js": "NODE_ENV=production $(npm bin)/babel src --out-dir lib",
     "build": "npm run build:css && npm run build:js",
     "lint": "eslint --ext .jsx --ext .js src",
-    "check": "npm run lint && npm run cover",
-    "precommit": "npm run check",
-    "prepublish": "npm run clean && npm run check && npm run build"
+    "check": "npm run lint",
+    "precommit": "npm run check && npm run cover",
+    "prepublish": "npm run clean && npm run check && npm run cover && npm run build"
   },
   "devDependencies": {
     "@dtrussia/eslint-config-dtrussia": "2.2.1",
