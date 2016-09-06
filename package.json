@@ -21,6 +21,9 @@
   ],
   "ava": {
     "babel": "inherit",
+    "files": [
+      "src/**/*.test.js"
+    ],
     "require": [
       "./test/helpers/setup-test-env.js"
     ]
@@ -44,7 +47,7 @@
   "scripts": {
     "cover": "nyc npm run test",
     "check-coverage": "nyc check-coverage --statements 80 --branches 80 --functions 80 --lines 80",
-    "test": "ava \"src/**/*.test.js\"",
+    "test": "ava",
     "watch:test": "npm run test -- --watch",
     "watch:cover": "nodemon --quiet --watch app --exec npm run cover -s",
     "clean": "rimraf lib",
