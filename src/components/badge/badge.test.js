@@ -2,7 +2,7 @@ import React from 'react';
 import initUI from '@react-ui/core';
 import test from 'ava';
 import { shallow } from 'enzyme';
-import Badge from './Badge';
+import Badge from './badge';
 
 const UI = initUI({ Badge })();
 
