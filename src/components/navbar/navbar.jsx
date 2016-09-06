@@ -1,14 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles.fixed]: !!props.fixed,
+const NavBar = (styles = {}) => ({ className, children, fixed, ...rest }) => {
+  const anotherClass = {
+    [styles.fixed]: !!fixed,
   };
 
   return (
-    <nav className={cn(styles.navbar, className, props.className)}>
-      {props.children}
+    <nav {...rest} className={cn(styles.navbar, anotherClass, className)}>
+      {children}
     </nav>
   );
 };
+
+export default NavBar;

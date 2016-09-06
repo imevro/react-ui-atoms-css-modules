@@ -1,15 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => (props) => {
-  const className = {
-    [styles.left]: !!props.left,
-    [styles.right]: !!props.right,
+const Menu = (styles = {}) => ({ className, children, left, right, ...rest }) => {
+  const anotherClass = {
+    [styles.left]: !!left,
+    [styles.right]: !!right,
   };
 
   return (
-    <div className={cn(className, styles.className)}>
-      {props.children}
+    <div {...rest} className={cn(anotherClass, className, styles.className)}>
+      {children}
     </div>
   );
 };
+
+export default Menu;

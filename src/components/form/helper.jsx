@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  return (
-    <span {...props} className={cn(styles.helper, props.className)}>
-      {props.children}
-    </span>
-  );
-};
+const Helper = (styles = {}) => ({ className, children, ...rest }) => (
+  <span {...rest} className={cn(styles.helper, className)}>
+    {children}
+  </span>
+);
+
+export default Helper;

@@ -1,32 +1,34 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const responsiveClassName = {
-    [styles.responsive]: !!props.responsive,
+const Table = (styles = {}) => ({ className, children, bordered, responsive, ...rest }) => {
+  const responsiveClass = {
+    [styles.responsive]: !!responsive,
   };
 
-  const tableClassName = {
-    [styles.bordered]: !!props.bordered,
+  const tableClass = {
+    [styles.bordered]: !!bordered,
   };
 
-  if (props.responsive) {
+  if (responsive) {
     return (
-      <div className={cn(responsiveClassName)}>
-        <table {...props} className={cn(styles.table, tableClassName, props.className)}>
+      <div className={cn(responsiveClass)}>
+        <table {...rest} className={cn(styles.table, tableClass, className)}>
           <tbody>
-            {props.children}
+            {children}
           </tbody>
         </table>
       </div>
     );
   } else {
     return (
-      <table {...props} className={cn(styles.table, tableClassName, props.className)}>
+      <table {...rest} className={cn(styles.table, tableClass, className)}>
         <tbody>
-          {props.children}
+          {children}
         </tbody>
       </table>
     );
   }
 };
+
+export default Table;

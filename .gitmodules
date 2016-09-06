@@ -1,0 +1,3 @@
+[submodule "examples/webpack-example"]
+	path = examples/webpack-example
+	url = https://github.com/trututupet/atom-css-modules-webpack-example

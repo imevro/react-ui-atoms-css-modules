@@ -1,8 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => (props) => (
-  <p className={cn(styles.static, props.className)}>
-    {props.children}
+const Static = (styles = {}) => ({ className, children, ...rest }) => (
+  <p {...rest} className={cn(styles.static, className)}>
+    {children}
   </p>
 );
+
+export default Static;

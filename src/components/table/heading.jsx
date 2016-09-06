@@ -1,14 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles.bordered]: !!props.bordered,
+const Heading = (styles = {}) => ({ className, children, bordered, ...rest }) => {
+  const anotherClass = {
+    [styles.bordered]: !!bordered,
   };
 
   return (
-    <th {...props} className={cn(styles.heading, className, props.className)}>
-      {props.children}
+    <th {...rest} className={cn(styles.heading, anotherClass, className)}>
+      {children}
     </th>
   );
 };
+
+export default Heading;

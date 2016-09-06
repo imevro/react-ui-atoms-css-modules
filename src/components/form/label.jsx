@@ -1,14 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles.block]: !!props.block,
+const Label = (styles = {}) => ({ className, children, block, ...rest }) => {
+  const anotherClass = {
+    [styles.block]: !!block,
   };
 
   return (
-    <label {...props} className={cn(styles.label, className, props.className)}>
-      {props.children}
+    <label {...rest} className={cn(styles.label, anotherClass, className)}>
+      {children}
     </label>
   );
 };
+
+export default Label;

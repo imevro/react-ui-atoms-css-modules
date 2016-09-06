@@ -4,10 +4,12 @@ import Link from './link';
 import Static from './static';
 import Brand from './brand';
 
-export default {
+const NavBar = {
   Container,
   Menu,
   Link,
   Static,
   Brand,
 };
+
+export default NavBar;

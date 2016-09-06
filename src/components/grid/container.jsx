@@ -1,12 +1,15 @@
 import React from 'react';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = props.fluid ? styles.containerFluid : styles.container;
+const Container = (styles = {}) => props => {
+  const { fluid, children, className, ...rest } = props;
+  const containerClass = fluid ? styles.containerFluid : styles.container;
 
   return (
-    <div {...props} className={cn(className, props.className)}>
-      {props.children}
+    <div {...rest} className={cn(containerClass, className)}>
+      {children}
     </div>
   );
 };
+
+export default Container;

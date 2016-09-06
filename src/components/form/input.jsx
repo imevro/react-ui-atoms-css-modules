@@ -2,17 +2,19 @@ import React from 'react';
 import MaskedInput from 'react-maskedinput';
 import cn from 'classnames';
 
-export default (styles = {}) => props => {
-  const className = {
-    [styles[props.kind]]: !!props.kind,
-    [styles.block]: !!props.block,
-    [styles[props.type]]: !!props.type,
-    [styles[props.valueClassName]]: props.value || props.value === 0,
+const Input = (styles = {}) => ({ className, valueClassName, kind, value, mask, block, type, ...rest }) => {
+  const anotherClass = {
+    [styles[kind]]: !!kind,
+    [styles.block]: !!block,
+    [styles[type]]: !!type,
+    [styles[valueClassName]]: value || value === 0,
   };
 
-  if (props.mask) {
-    return <MaskedInput {...props} className={cn(styles.formControl, className, props.className)} />;
+  if (mask) {
+    return <MaskedInput {...rest} value={value} className={cn(styles.formControl, anotherClass, className)} />;
   } else {
-    return <input {...props} className={cn(styles.formControl, className, props.className)} />;
+    return <input {...rest} className={cn(styles.formControl, anotherClass, className)} />;
   }
 };
+
+export default Input;
