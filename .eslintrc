@@ -1,3 +1,13 @@
 {
-  "extends": "@dtrussia/eslint-config-dtrussia/react"
+  "extends": "@dtrussia/eslint-config-dtrussia/react",
+  "rules": {
+      "id-length": [2, {
+      exceptions: [
+        'e', // events
+        '_', // params
+        'i', // fors
+        't' // tests
+      ]
+    }],
+  }
 }

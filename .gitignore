@@ -5,3 +5,5 @@ npm-debug.log
 .tmp
 test-reports
 lib
+coverage
+.nyc_output
