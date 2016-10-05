@@ -14,7 +14,7 @@ Atomic components for React UI styled with CSS Modules
 
 ## Usage
 ```sh
-npm install --save @react-ui/atoms-css-modules
+npm install --save @react-ui/core@latest @react-ui/atoms-css-modules
 ```
 
 Supply components and their styles to `initUI`:
