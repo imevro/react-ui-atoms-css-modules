@@ -1,6 +1,6 @@
 {
   "name": "@react-ui/atoms-css-modules",
-  "version": "1.0.0-beta6",
+  "version": "1.0.0-beta7",
   "description": "Atomic components for React UI styled with CSS Modules",
   "keywords": [
     "react",

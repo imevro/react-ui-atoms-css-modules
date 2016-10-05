@@ -11,7 +11,7 @@ const Input = (styles = {}) => ({ className, valueClassName, kind, value, mask, 
   };
 
   if (mask) {
-    return <MaskedInput {...rest} value={value} className={cn(styles.formControl, anotherClass, className)} />;
+    return <MaskedInput {...rest} mask={mask} value={value} className={cn(styles.formControl, anotherClass, className)} />;
   } else {
     return <input {...rest} className={cn(styles.formControl, anotherClass, className)} />;
   }
