@@ -45,7 +45,6 @@ $container-lg: resolve(1140px + $grid-gutter-width);
 
 @mixin make-column($media, $columns) {
   box-sizing: border-box;
-  flex: 0 0 auto;
   width: 100%;
   padding-right: resolve($grid-gutter-width/2);
   padding-left: resolve($grid-gutter-width/2);
