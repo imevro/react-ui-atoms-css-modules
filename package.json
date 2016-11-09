@@ -1,6 +1,6 @@
 {
   "name": "@react-ui/atoms-css-modules",
-  "version": "1.0.0-beta9",
+  "version": "1.0.0-beta10",
   "description": "Atomic components for React UI styled with CSS Modules",
   "keywords": [
     "react",
@@ -13,7 +13,7 @@
     "url": "https://github.com/jqestate/react-ui-atoms-css-modules/issues"
   },
   "license": "Apache-2.0",
-  "author": "Evgeny Rodionov <github@theaqua.im> (https://github.com/theaqua)",
+  "author": "Evgeny Rodionov <oss-react-ui@erodionov.ru> (https://github.com/evgenyrodionov)",
   "contributors": [
     "Konstantin Grushetsky <toxickg@icloud.com> (https://github.com/toxickg)",
     "Bogdan Tsubeks <tsubeks@gmail.com> (https://github.com/trututu)",

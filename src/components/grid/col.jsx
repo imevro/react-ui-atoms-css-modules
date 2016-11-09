@@ -9,22 +9,30 @@ const Col = (styles = {}) => props => {
     lg, lgOffset,
     children,
     className,
-    ...rest,
+    hiddenOn,
+    visibleFrom,
+    ...restProps,
   } = props;
 
   const mediaClass = {
     [styles[`xs-${xs}`]]: !!xs,
     [styles[`xs-offset-${xsOffset}`]]: !!xsOffset,
+
     [styles[`sm-${sm}`]]: !!sm,
     [styles[`sm-offset-${smOffset}`]]: !!smOffset,
+
     [styles[`md-${md}`]]: !!md,
     [styles[`md-offset-${mdOffset}`]]: !!mdOffset,
+
     [styles[`lg-${lg}`]]: !!lg,
     [styles[`lg-offset-${lgOffset}`]]: !!lgOffset,
+
+    [styles[`hiddenOn-${hiddenOn}`]]: !!hiddenOn,
+    [styles[`visibleFrom-${visibleFrom}`]]: !!visibleFrom,
   };
 
   return (
-    <div {...rest} className={cn(mediaClass, className)}>
+    <div {...restProps} className={cn(mediaClass, className)}>
       {children}
     </div>
   );

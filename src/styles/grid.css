@@ -193,3 +193,71 @@ $container-lg: resolve(1140px + $grid-gutter-width);
     }
   }
 }
+
+.hiddenOn-xs {
+  display: none;
+
+  @include responsive(sm) {
+    display: block;
+  }
+}
+
+.hiddenOn-sm {
+  display: block;
+
+  @include responsive(sm) {
+    display: none;
+  }
+
+  @include responsive(md) {
+    display: block;
+  }
+}
+
+.hiddenOn-md {
+  display: block;
+
+  @include responsive(md) {
+    display: none;
+  }
+
+  @include responsive(lg) {
+    display: block;
+  }
+}
+
+.hiddenOn-lg {
+  display: block;
+
+  @include responsive(lg) {
+    display: none;
+  }
+}
+
+.visibleFrom-xs {
+  display: block;
+}
+
+.visibleFrom-sm {
+  display: none;
+
+  @include responsive(sm) {
+    display: block;
+  }
+}
+
+.visibleFrom-md {
+  display: none;
+
+  @include responsive(md) {
+    display: block;
+  }
+}
+
+.visibleFrom-lg {
+  display: none;
+
+  @include responsive(lg) {
+    display: block;
+  }
+}
