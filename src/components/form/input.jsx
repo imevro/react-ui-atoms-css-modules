@@ -2,7 +2,7 @@ import React from 'react';
 import MaskedInput from 'react-maskedinput';
 import cn from 'classnames';
 
-const Input = (styles = {}) => ({ className, valueClassName, kind, value, mask, block, type, ...rest }) => {
+const Input = (styles = {}) => ({ className, valueClassName, kind, value, mask, block, type, ...restProps }) => {
   const anotherClass = {
     [styles[kind]]: !!kind,
     [styles.block]: !!block,
@@ -11,9 +11,9 @@ const Input = (styles = {}) => ({ className, valueClassName, kind, value, mask, 
   };
 
   if (mask) {
-    return <MaskedInput {...rest} type={type} mask={mask} value={value} className={cn(styles.formControl, anotherClass, className)} />;
+    return <MaskedInput {...restProps} type={type} mask={mask} value={value} className={cn(styles.formControl, anotherClass, className)} />;
   } else {
-    return <input {...rest} type={type} className={cn(styles.formControl, anotherClass, className)} />;
+    return <input {...restProps} type={type} value={value} className={cn(styles.formControl, anotherClass, className)} />;
   }
 };
 
